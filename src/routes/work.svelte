@@ -1,5 +1,11 @@
 <script>
 	import Work from '../components/work.svelte';
+	async function getProjects() {
+		let response = await fetch('../static/project.json');
+		let projects = await response.json();
+		return projects;
+	}
+	const projects = getProjects();
 </script>
 
 <svelte:head>
@@ -15,10 +21,13 @@
 			building!
 		</p>
 		<div class="grid grid-cols-2 gap-6">
-			<Work title="Maid About Town" />
-			<Work title="Maid About Town" />
-			<Work title="Maid About Town" />
-			<Work title="Maid About Town" />
+			{#await projects}
+				<p>Loading my work, hang tight...</p>
+			{:then projects}
+				{#each projects as project}
+					<Work title={project.name} desc={project.desc} link={project.url} />
+				{/each}
+			{/await}
 		</div>
 	</div>
 </main>
