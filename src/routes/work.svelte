@@ -20,7 +20,7 @@
 			experience with the latest tech stack so give me a shout if you want a blazing fast website
 			building!
 		</p>
-		<div class="grid grid-cols-2 gap-6">
+		<div class="grid md:grid-cols-2 gap-6">
 			{#await projects}
 				<p>Loading my work, hang tight...</p>
 			{:then projects}
