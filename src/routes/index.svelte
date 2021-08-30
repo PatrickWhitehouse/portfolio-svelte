@@ -35,7 +35,7 @@
 			most of my wages go ha!). Below is a little showcase of some of the cars I've been lucky
 			enough to own.
 		</p>
-		<div class="grid grid-cols-2 lg:grid-cols-3 gap-2">
+		<div class="grid grid-cols-2 lg:grid-cols-3 gap-4">
 			<img src={Bmw} alt="BMW 140i" class="w-auto" />
 			<img src={Cupra} alt="Cupra 290" class="w-auto" />
 			<img src={Abarth} alt="Abarth 500" class="w-auto" />
