@@ -1,11 +1,6 @@
 <script>
 	import Work from '../components/work.svelte';
-	async function getProjects() {
-		let response = await fetch('../static/project.json');
-		let projects = await response.json();
-		return projects;
-	}
-	const projects = getProjects();
+	import projectsData from '../../static/project.json';
 </script>
 
 <svelte:head>
@@ -21,7 +16,7 @@
 			building!
 		</p>
 		<div class="grid md:grid-cols-2 gap-6">
-			{#await projects}
+			{#await projectsData}
 				<p>Loading my work, hang tight...</p>
 			{:then projects}
 				{#each projects as project}
